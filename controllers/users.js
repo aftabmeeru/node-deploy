@@ -1,5 +1,3 @@
-const fs = require("fs");
-const path = require("path");
 const model = require("../models/user");
 const User = model.User;
 
