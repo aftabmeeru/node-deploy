@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    async function deleteProduct(product) {
+      console.log(product);
+      const response = await fetch("/products"+product, {
+        method: "DELETE"
+      })
+    }
+  </script>
+  <body>
+    <% for(let product of products) { %> <% if(product) { %>
+    <article class="card">
+      <div class="left-card">
+        <img
+          class="poster-img1"
+          src="https://lh3.googleusercontent.com/drive-viewer/AEYmBYS53mNjkYqQKPjkiPLeF-jTW9VyZAaOcSaCVmqFfQGA41EAyzYMWiHJOYr0TGfk_2tvonXA9EDglQgF3FJICawaj5cRzA=s1600"
+          alt="poster image 1"
+        />
+        <img
+          class="poster-img2"
+          src="images/image-product-mobile.jpg"
+          alt="poster image 2"
+        />
+      </div>
+      <div class="right-card">
+        <h2 class="item-name"><%= product.name %></h2>
+        <h1 class="main-title">Gabrielle Essence Eau De Parfum</h1>
+        <p class="summary">
+          A floral, solar and voluptuous interpretation composed by Olivier
+          Polge, Perfumer-Creator for the House of CHANEL
+        </p>
+        <div class="price">
+          <p class="current-price">$<%= product.price %></p>
+          <p class="old-price">$<%= product.old_price %></p>
+        </div>
+        <button class="btn" onclick="deleteProduct('<%= product._id %>')">
+          Add to Cart
+        </button>
+      </div>
+    </article>
+    <% } %> <% } %>
+  </body>
+</html>

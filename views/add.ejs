@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Form</title>
+</head>
+<body>
+    <form onSubmit={handleSubmit}>
+        <h2>Add Product</h2>
+        <div>
+          <label htmlFor="title">Title</label>
+          <input
+            type="text"
+            name="title"
+            id="title"
+            placeholder="Title"
+          />
+        </div>
+        <div>
+          <label htmlFor="thumbnail">Thumbnail</label>
+          <input
+            type="text"
+            name="thumbnail"
+            id="thumbnail"
+            placeholder="Thumbnail"
+          />
+        </div>
+        <div>
+          <label htmlFor="price">Price</label>
+          <input
+            type="number"
+            name="price"
+            id="price"
+            placeholder="Price"
+          />
+        </div>
+        <div>
+          <select name="brand" id="brand">
+            <option value="">Choose</option>
+            <option value="laptop">Laptop</option>
+            <option value="mobile">Mobile</option>
+          </select>
+        </div>
+        <div>
+          <select name="category" id="category">
+            <option value="">Choose</option>
+            <option value="apple">Apple</option>
+            <option value="samsung">Samsung</option>
+          </select>
+        </div>
+        <div>
+          <label htmlFor="discountPercentage">Discount Percentage</label>
+          <input
+            type="number"
+            name="discountPercentage"
+            id="discountPercentage"
+            placeholder="Discount Percentage"
+          />
+        </div>
+        <button type="submit">Add Product</button>
+      </form>
+</body>
+</html>
